@@ -1,2 +1,2 @@
 # git-py
-pythons学习
+python学习

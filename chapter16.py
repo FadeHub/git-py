@@ -7,6 +7,7 @@ headers = {
     }
 url = "https://bj.58.com/chuzu/pn{0}/?PGTID=0d3090a7-0000-1840-3c31-74c281b4647c&ClickID=3"
 # 58租房url
+fp = open('58租房.txt','w',encoding='utf-8')
 for page in range(1,5):
     page = str(page)
     new_url = url.format(page)
@@ -18,4 +19,5 @@ for page in range(1,5):
         house_detail = ''.join(house_detail).replace("\n",' ').replace(" ",'')
         house_price = li.xpath('./div[@class="list-li-right"]//b[@class="strongbox"]/text()')
         house_price = ''.join(house_price)
+        fp.write(house_detail + '========>' + house_price+'\n')
         print(house_detail + "========>" + house_price)
